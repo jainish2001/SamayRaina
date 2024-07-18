@@ -1,0 +1,226 @@
+/* Chess Board Color Palette */
+:root {
+    --bg-1: #eeeed2;
+    --bg-2: #769656;
+    --hg: #baca44;
+    --clr-1: #000000;
+    --clr-2: #f9f9f9;
+}
+
+html {
+    scroll-behavior: smooth;
+    cursor: url('/assets/img/respectable-ghoda.png'), auto;
+}
+
+/* Body */
+body {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background-color: var(--bg-1);
+    font-family: Arial, sans-serif;
+}
+
+/* Home */
+#home {
+    margin: 10px;
+    text-align: center;
+    justify-content: center;
+    color: var(--clr-1);
+    background-color: var(--bg-1);
+}
+
+/* Header */
+header {
+    background-color: var(--bg-2);
+    border-radius: 5px;
+}
+
+#supreme {
+    margin-top: -1%;
+    margin-bottom: 10px;
+    margin-right: auto;
+    margin-left: .5%;
+    text-align: center;
+}
+
+#supreme:hover {
+    color: var(--clr-2);
+}
+
+h1 > a {
+    text-decoration: none;
+    color: var(--clr-1);
+}
+
+a:hover {
+    color: var(--hg);
+    cursor: url('/assets/img/respectable-ghoda-hover.png'), auto;
+}
+
+/* Tibute Info Para and IMG */
+#tribute-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+#maisamayhoon {
+    display: flex;
+    height: auto;
+    width: 100%;
+    border-radius: 10px;
+    max-width: 100%;
+}
+
+
+figcaption{
+    font-weight: bold;
+}
+
+/* https://www.youtube.com/watch?v=McPdzhLRzCg */
+.slider-wrapper {
+    position: relative;
+    max-width: 600px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.slider {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.slider img {
+    min-width: 100%;
+    object-fit: cover;
+    border-radius: 0.5rem;
+}
+
+.slider-img:hover {
+    transform: scale(1.1);
+    transition: 0.3s ease-in-out;
+    cursor: url('/assets/img/respectable-ghoda-hover.png'), auto;
+    border-radius: 0.5rem;
+}
+
+.slider-nav {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+}
+
+.slider-nav a {
+    display: block;
+    width: 10px;
+    height: 10px;
+    background-color: white;
+    border-radius: 50%;
+    opacity: 0.7;
+}
+
+.slider-nav a:hover {
+    opacity: 1;
+    cursor: url('/assets/img/respectable-ghoda-hover.png');
+}
+
+#samay {
+    display: flex;
+    font-size: 125%;
+    font-style: oblique;
+    text-align: justify;
+}
+
+/* Alignments of Para and IMG */
+#ld {
+    flex: 1;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+#rd {
+    flex: 2;
+    padding: 15px;
+    background-color: var(--clr-2);
+    border-radius: 10px;
+    margin: 10px;
+}
+
+/* Timeline */
+#timeline {
+    background-color: var(--bg-2);
+    border-radius: 5px;
+    font-size: larger;
+    font-size: 20px;
+    margin: auto;
+}
+
+#timeline h3 {
+    margin-top: 20px;
+}
+
+#timeline ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#timeline ul li {
+    padding: 10px 20px;
+    border-bottom: 1px solid var(--hg);
+}
+
+#timeline ul li strong {
+    font-weight: bold;
+}
+
+#timeline:hover {
+    cursor: url('/assets/img/respectable-ghoda-hover.png'), auto;
+}
+
+/* Photo Gallery */
+#titlepg {
+  background-color: var(--bg-2);
+  color: var(--clr-1);
+  font-size: larger;
+  border-radius: 5px;
+  margin: 10px auto;
+  padding: 10px auto;
+}
+#photo-gallery {
+  background-image: url('/assets/img/chess-bg.png');
+  border-radius: 5px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  max-width: auto;
+  margin: 0 auto;
+  padding: 20px 10px;
+}
+
+#photo-gallery > img {
+    width: 100%;
+    max-width: 350px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+    transform-origin: center center;
+}
+
+#photo-gallery::after {
+    content: "";
+    width: 350px;
+}
+
+#photo-gallery > img:hover {
+    transform: scale(1.1);
+    cursor: url('/assets/img/respectable-ghoda-hover.png'), auto;
+}
