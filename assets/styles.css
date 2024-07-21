@@ -47,10 +47,11 @@ header {
 #supreme:hover {
     color: var(--clr-2);
 }
-
-h1 > a {
-    text-decoration: none;
+h1 a, h2 a {
     color: var(--clr-1);
+}
+a {
+    text-decoration: none;
 }
 
 a:hover {
@@ -164,7 +165,7 @@ figcaption{
     margin: auto;
 }
 
-#timeline h3 {
+#timeline h2 {
     margin-top: 20px;
 }
 
@@ -182,11 +183,15 @@ figcaption{
     font-weight: bold;
 }
 
+
 #timeline:hover {
     cursor: url('/assets/img/respectable-ghoda-hg.png'), auto;
+/*
     color: var(--bg-2);
     background-color: var(--clr-1);
+*/
 }
+
 
 /* Photo Gallery */
 #titlepg {
@@ -283,7 +288,10 @@ figcaption{
 }
 
 .video-item:hover, .video-item h4:hover {
-    cursor: url('/assets/img/respectable-ghoda.png'), auto;
     background-color: var(--clr-2);
     color: var(--bg-2);
+}
+
+#video-gallery:hover, .video-wrapper iframe:hover {
+    cursor: url('/assets/img/parental-advisory2.png'), auto;
 }
