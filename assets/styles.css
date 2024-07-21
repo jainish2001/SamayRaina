@@ -194,7 +194,7 @@ figcaption{
 
 
 /* Photo Gallery */
-#titlepg {
+#photo-gallery {
   background-color: var(--bg-2);
   color: var(--clr-1);
   font-size: larger;
@@ -203,7 +203,7 @@ figcaption{
   padding: 10px auto;
 }
 
-#photo-gallery {
+#photos {
 /*  background-image: url('/assets/img/chess-bg.png'); */
   border-radius: 5px;
   display: flex;
@@ -217,7 +217,7 @@ figcaption{
   padding: 20px 10px;
 }
 
-#photo-gallery > img {
+#photos > img {
     width: 100%;
     max-width: 300px;
     height: 300px;
@@ -227,7 +227,7 @@ figcaption{
     transform-origin: center center;
 }
 
-#photo-gallery::after {
+#photos::after {
     content: "";
     width: 300px;
 }
