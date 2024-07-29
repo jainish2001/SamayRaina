@@ -5,9 +5,688 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="description" content="Samay Raina Tribute Page by Jainish Jain" />
         <title>Samay Raina -TributePage</title>
-        <link rel="icon" type="image/png" href="/assets/img/samay.png">
-        <link rel="stylesheet" href="/assets/styles.css" />
+        <link rel="icon" type="image/png" href="/assets/img/samay.png" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <style>
+            /* Chess Board Color Palette */
+            :root {
+                --bg-1: #eeeed2;
+                --bg-2: #769656;
+                --hg: #baca44;
+                --clr-1: #000000;
+                --clr-2: #f9f9f9;
+            }
+
+            html {
+                scroll-behavior: smooth;
+                cursor: url('/assets/respectable-ghoda.png'), auto;
+            }
+
+            /* Body */
+            body {
+                margin: 0;
+                padding: 0;
+                text-align: center;
+                background-color: var(--bg-1);
+                font-family: Arial, sans-serif;
+                line-height: 1.2;
+            }
+
+            /* Home */
+            #home {
+                margin: 10px;
+                text-align: center;
+                justify-content: center;
+                color: var(--clr-1);
+                background-color: var(--bg-1);
+            }
+
+            /* Header */
+            header {
+                background-color: var(--bg-2);
+                border-radius: 5px;
+                padding: 1rem;
+            }
+
+            #supreme {
+                margin-top: -1%;
+                margin-bottom: 10px;
+                margin-right: auto;
+                margin-left: .5%;
+                text-align: center;
+            }
+
+            #supreme:hover {
+                color: var(--clr-2);
+            }
+
+            h1 a, h2 a {
+                color: var(--clr-1);
+            }
+
+            h2 {
+                transition: color 0.3s ease;
+            }
+            a {
+                text-decoration: none;
+                transition: color 0.3s ease;
+            }
+
+            a:hover {
+                color: var(--hg);
+                cursor: url('/assets/img/respectable-ghoda-hover.png'), auto;
+            }
+
+            /* samayNav */
+            .samayNav {
+                background-color: var(--clr-2);
+                border-radius: .3em;
+                padding: auto;
+            }
+
+            .samayNav a {
+                color: var(--bg-2);
+            }
+
+            .samayNav ul {
+                list-style-type: none;
+            }
+
+            .samayNav ul li {
+                display: inline-block;
+                margin-right: 10px;
+            }
+
+            .samayNav ul li a {
+                text-decoration: none;
+                transition: color 0.3s ease;
+            }
+
+            /* Tibute Info Para and IMG */
+            #tribute-info {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 20px;
+            }
+
+            #maisamayhoon {
+                display: flex;
+                height: auto;
+                width: 100%;
+                border-radius: 10px;
+                max-width: 100%;
+            }
+
+
+            figcaption{
+                font-weight: bold;
+            }
+
+            /* https://www.youtube.com/watch?v=McPdzhLRzCg */
+            .slider-wrapper {
+                position: relative;
+                max-width: 600px;
+                margin: 0 auto;
+                overflow: hidden;
+            }
+
+            .slider {
+                display: flex;
+                transition: transform 0.5s ease;
+            }
+
+            .slider img {
+                min-width: 100%;
+                object-fit: cover;
+                border-radius: 0.5rem;
+            }
+
+            .slider-img:hover {
+                cursor: url('/assets/img/respectable-ghoda-hover.png'), auto;
+                border-radius: 0.5rem;
+            }
+
+            .slider-nav {
+                position: absolute;
+                bottom: 10px;
+                left: 50%;
+                transform: translateX(-50%);
+                display: flex;
+                gap: 10px;
+            }
+
+            .slider-nav a {
+                display: block;
+                width: 10px;
+                height: 10px;
+                background-color: white;
+                border-radius: 50%;
+                opacity: 0.7;
+            }
+
+            .slider-nav a:hover {
+                opacity: 1;
+                cursor: url('/assets/img/respectable-ghoda-hover.png');
+            }
+
+            #samay {
+                display: flex;
+                font-size: 125%;
+                font-style: oblique;
+                text-align: justify;
+                transition: color 0.3s ease-in-out;
+            }
+
+
+            /* Alignments of Para and IMG */
+            #ld {
+                flex: 1;
+                padding: 10px;
+                border-radius: 10px;
+                margin: 10px;
+            }
+
+            #rd {
+                flex: 2;
+                padding: 15px;
+                background-color: var(--clr-2);
+                border-radius: 10px;
+                margin: 10px;
+            }
+
+            #rd:hover {
+                background-color: var(--clr-1);
+                color: var(--hg);
+                cursor: url('/assets/img/respectable-ghoda-hover.png'), auto;
+            }
+
+            @media (max-width: 768px) {
+                #tribute-info {
+                    flex-direction: column;
+                }
+
+                #ld, #rd {
+                    width: 100%;
+                }
+
+                .video-grid {
+                    grid-template-columns: 1fr;
+                }
+            }
+
+            /* Timeline */
+            #timeline {
+                background-color: var(--bg-2);
+                font-size: larger;
+                font-size: 20px;
+                border-radius: 15px;
+                margin: 30px 10px;
+                padding: 10px;  
+            }
+
+            #timeline h2 {
+                margin-top: 20px;
+            }
+
+            #timeline ul {
+                list-style-type: none;
+                padding: 0;
+            }
+
+            #timeline ul li {
+                padding: 10px 20px;
+                border-bottom: 1px solid var(--hg);
+                color: var(--clr-2);
+            }
+
+            #timeline ul li strong {
+                font-weight: bold;
+            }
+
+
+            #timeline:hover {
+                cursor: url('/assets/img/respectable-ghoda-hg.png'), auto;
+            /*
+                color: var(--bg-2);
+                background-color: var(--clr-1);
+            */
+            }
+
+
+            /* Photo Gallery */
+            #photo-gallery {
+            background-color: var(--bg-2);
+            color: var(--clr-1);
+            font-size: larger;
+            border-radius: 15px;
+            margin: 30px 10px;
+            padding: 10px;
+            }
+
+            /* Carousel */
+            .custom-carousel {
+                position: relative;
+                max-width: 700px;
+                margin: 20px auto;
+                overflow: hidden;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            }
+
+            .custom-carousel-inner {
+                position: relative;
+                width: 100%;
+                height: 0;
+                padding-bottom: 100%; /* 1:1 aspect ratio */
+            }
+
+            .custom-carousel-item {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                opacity: 0;
+                transition: opacity 0.5s ease-in-out;
+            }
+
+            .custom-carousel-item.active {
+                opacity: 1;
+            }
+
+            .custom-carousel-item img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+
+            .custom-carousel-control {
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                color: var(--bg-1);
+                font-size: 24px;
+                text-decoration: none;
+                padding: 10px;
+                border-radius: 10px;
+                cursor: url('/assets/img/respectable-ghoda-hover.png'), auto;
+                background-color: rgba(24, 24, 24, 0.466);
+            }
+
+            .custom-carousel-control-prev {
+                left: 10px;
+            }
+
+            .custom-carousel-control-next {
+                right: 10px;
+            }
+
+            .custom-carousel-indicators {
+                position: absolute;
+                bottom: 10px;
+                left: 50%;
+                transform: translateX(-50%);
+                list-style: none;
+                display: flex;
+            }
+
+            .custom-carousel-indicators li {
+                width: 10px;
+                height: 10px;
+                background-color: rgba(255,255,255,0.5);
+                border-radius: 50%;
+                margin: 0 5px;
+                cursor: url(/assets/img/respectable-ghoda-hover.png), auto;
+            }
+
+            .custom-carousel-indicators li.active {
+                border-radius: 35%;
+                background-color: var(--clr-2);
+            }
+
+            #samayCarousel1 {
+                border-radius: 0%;
+            }
+
+            #samayCarousel2 {
+                border-radius: 10%;
+            }
+
+            #samayCarousel:hover, #samayCarousel2:hover {
+                cursor: url(/assets/img/avif/respectable-ghoda-hover.avif), auto;
+            }
+
+            @media (max-width: 700px) {
+                .custom-carousel {
+                    max-width: 100%;
+                    margin: 10px;
+                }
+            }
+
+
+
+            /* video-gallery */
+
+            #video-gallery {
+                border-radius: 15px;
+                margin: 30px 10px;
+                padding: 10px;  
+                background-color: var(--bg-2);
+                cursor: url('/assets/img/respectable-ghoda-hover.png'), auto;
+            }
+
+            .video-grid {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 20px;
+            }
+            
+            .video-item {
+                background-color: var(--bg-1);
+                padding: 10px;
+                border-radius: 10px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                transition: transform 0.5s ease, filter 0.5s ease;
+            }
+
+            .video-item h4 {
+                margin-top: 10px;
+                font-weight: bold;
+                color: #333;
+            }
+
+            .video-item:hover, .video-item h4:hover {
+                background-color: var(--clr-2);
+                color: var(--bg-2);
+            }
+
+            #video-gallery:hover, .video-wrapper iframe:hover {
+                cursor: url('/assets/img/parental-advisory4.2.1.png'), auto;
+            }
+
+            .video-wrapper {
+                position: relative;
+                padding-bottom: 56.25%; /* 16:9 aspect ratio */
+                height: 0;
+                overflow: hidden;
+                border-radius: .5em;
+            }
+
+            .video-wrapper iframe {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                border: none;
+            }
+
+            .video-wrapper img {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                cursor: pointer;
+            }
+
+            /* Slider container */
+            .vslider-container {
+                position: relative;
+                width: 100%;
+                max-width: 700px; /* Adjust as needed */
+                margin: auto;
+                overflow: hidden;
+                border-radius: .4em; /* Optional: for rounded corners */
+            }
+
+            .vslider-wrapper {
+                display: flex;
+                transition: transform 0.5s ease-in-out;
+            }
+
+            .video-item {
+                min-width: 100%;
+                box-sizing: border-box;
+                padding: .6em;
+            }
+
+            /* Non-active slides styling */
+            .video-item:not(.active) {
+                transform: scale(0.9); /* Shrink non-active items */
+                filter: grayscale(70%) blur(.2em); /* Apply grayscale and blur to non-active items */
+            }
+
+            /* Ensure active slide is clear */
+            .video-item.active {
+                transform: scale(1); /* Ensure active item is at full scale */
+                filter: none; /* Remove any grayscale and blur from the active item */
+            }
+
+            /* Navigation buttons */
+            .vslider-nav {
+                position: absolute;
+                top: 50%;
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                transform: translateY(-50%);
+                pointer-events: none; /* Prevent buttons from interfering with clicks */
+            }
+
+            .vnav-button {
+                background-color: rgba(24, 24, 24, 0.466);
+                border: none;
+                color: white;
+                padding: 1.5em .5em;
+                cursor: pointer;
+                font-size: 1.5em;
+                pointer-events: all; /* Allow buttons to be clickable */
+                z-index: 1; /* Ensure buttons are above other content */
+            }
+
+            #prev-btn:hover {
+                background-color: rgba(0, 0, 0, 0.8);
+                color: var(--clr-2);
+            }
+
+            #next-btn:hover {
+                background-color: rgba(0, 0, 0, 0.8);
+                color: var(--clr-2);
+            }
+
+            #prev-btn {
+                border-radius: 0 .5em .5em 0;
+            }
+
+            #next-btn {
+                border-radius: .5em 0 0 .5em;
+            }
+
+            /* Modal Styles */
+            .modal {
+                display: none; /* Hidden by default */
+                position: fixed;
+                z-index: 1;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                overflow: auto;
+                background-color: rgba(0,0,0,.8);
+                justify-content: center;
+                align-items: center;
+            }
+
+            .modal-content {
+                position: relative;
+                width: 80%;
+                max-width: 50em;
+            }
+
+            .modal-content iframe {
+                width: 100%;
+                height: 30em;
+                max-height: 80%;
+                border-radius: .3em; /* Rounded corners for iframe */
+            }
+
+            @media (max-width: 700px) {
+                .modal-content {
+                    max-width: 100%;
+                    padding: 0;
+                    margin: .2em;
+                }
+                .modal-content iframe {
+                    height: 20em;
+                }
+                .vnav-button {
+                    background-color: rgba(24, 24, 24, 0.7);
+                    padding: 1em .3em;
+                    font-size: 1.5em;
+                }
+                .vslider-nav {
+                    top: 35%;
+                }
+                .video-item {
+                    padding: .4em;
+                }
+            }
+
+            /* Close button styles */
+            .close {
+                position: fixed; /* Make it fixed to the viewport */
+                top: 20px;
+                right: 20px;
+                color: var(--clr-2);
+                font-size: 30px;
+                font-weight: bold;
+                cursor: pointer;
+                border: none;
+                background: transparent;
+                transition: color 0.3s, transform 0.3s;
+                z-index: 2; /* Ensure the close button is above the modal content */
+            }
+
+            .close:hover,
+            .close:focus {
+                color: var(--hg); /* Change color on hover */
+                transform: scale(1.1); /* Slightly enlarge on hover */
+            }
+
+            .footerContainer {
+                background-color: var(--bg-2);
+                color: var(--clr-2);
+                padding: 20px;
+                text-align: center;
+                border-radius: 15px;
+                margin: 30px 10px;
+                padding: 10px;  
+            }
+
+            .socials {
+                margin-bottom: 10px;
+            }
+
+            .socials a {
+                color: var(--clr-2);
+                font-size: 1.5rem;
+                margin: 0 10px;
+                text-decoration: none;
+                transition: color 0.3s ease;
+            }
+
+            .socials a:hover {
+                color: var(--clr-1);
+                cursor: url('/assets/chessPieces/kinglight.png'), pointer;
+            }
+
+            .footerNav ul {
+                list-style-type: none;
+                padding: 0;
+            }
+
+            .footerNav ul li {
+                display: inline-block;
+                margin-right: 10px;
+            }
+
+            .footerNav ul li a {
+                color: var(--clr-2);
+                text-decoration: none;
+                transition: color 0.3s ease;
+            }
+
+            .footerNav ul li a:hover {
+                color: var(--clr-1);
+                cursor: url('/assets/chessPieces/kingdark.png'), pointer;
+            }
+
+            .designer a {
+                color: var(--clr-2);
+                text-decoration: none;
+                transition: color 0.3s ease;
+            }
+
+            .designer a:hover {
+                color: var(--clr-1);
+                text-decoration: double;
+                cursor: url('/assets/chessPieces/rooklight.png'), pointer;
+            }
+            
+            /* NoCopyright */
+            .tooltip {
+                position: relative;
+                display: inline-block;
+                cursor: url('/assets/chessPieces/pawndark.png'), auto;
+                text-decoration: underline;
+            }
+
+            .tooltip .tooltiptext {
+                visibility: hidden;
+                width: 100%;
+                background-color: var(--clr-1);
+                color: var(--clr-2);
+                text-align: center;
+                border-radius: 5px;
+                padding: 5px;
+                position: absolute;
+                z-index: 1;
+                bottom: 125%; /* Position above the text */
+                left: 50%;
+                margin-left: -80px; /* Center the tooltip */
+                opacity: 0;
+                transition: opacity 0.3s;
+            }
+
+            .tooltip:hover .tooltiptext {
+                visibility: visible;
+                opacity: 1;
+            }
+
+            #back-to-top {
+                position: fixed;
+                bottom: 20px;
+                right: 20px;
+                background-color: var(--clr-1);
+                color: var(--hg);
+                border: none;
+                border-radius: 50%;
+                width: 50px;
+                height: 50px;
+                font-size: 2rem;
+                cursor: pointer;
+                display: none;
+                transition: background-color 0.3s ease;
+            }
+
+            #back-to-top:hover {
+                background-color: var(--hg);
+                color: var(--clr-1);
+                cursor: url('/assets/img/respectable-ghoda-hover.png'), auto;
+            }
+        </style>
     </head>
     <body aria-labelledby="home" id="home">
         <header>
@@ -15,32 +694,22 @@
             <h2 id="supreme">The Hustler</h2>
         </header>
         <main>
+            <!--
+            <div class="samayNav">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#timeline">Timeline</a></li>
+                    <li><a href="#photo-gallery">Photo Gallery</a></li>
+                    <li><a href="#video-gallery">Video Gallery</a></li>
+                </ul>
+            </div>
+            -->
+            <!-- Tribute -->
             <div id="tribute-info">
+                <!-- Image Slider -->
                 <div id="ld">
                     <figure>
                         <section class="container">
-                            <!--
-                            <div class="custom-carousel" id="samayCarousel1">
-                                <div class="custom-carousel-inner">
-                                    <div class="custom-carousel-item active">
-                                        <img src="/assets/img/maisamayhoon.jpg" alt="Samay Raina 1">
-                                    </div>
-                                    <div class="custom-carousel-item">
-                                        <img src="/assets/img/maisamayhoon-2.jpg" alt="Samay Raina 2">
-                                    </div>
-                                    <div class="custom-carousel-item">
-                                        <img src="/assets/img/maisamayhoon-3.jpg" alt="Samay Raina 3">
-                                    </div>
-                                </div>
-                                <a class="custom-carousel-control custom-carousel-control-prev" role="button" data-slide="prev">
-                                    &#10094;
-                                </a>
-                                <a class="custom-carousel-control custom-carousel-control-next" role="button" data-slide="next">
-                                    &#10095;
-                                </a>
-                                <ol class="custom-carousel-indicators"></ol>
-                            </div>                        
-                            -->
                             <div class="slider-wrapper">
                                 <div class="slider">
                                     <img src="/assets/img/maisamayhoon-2.jpg" class="slider-img" id="slide-1" alt="maisamayhoon">
@@ -59,6 +728,7 @@
                         <figcaption>MAI SAMAY HOON</figcaption>
                     </figure>
                 </div>
+                <!-- About Samay -->
                 <article id="rd">
                     <h2>About Samay Raina</h2>
                     <p id="samay">Samay Raina is a versatile Indian entertainer who has won the hearts of millions with his unique mix of stand-up comedy and chess streaming. Hailing from Pune, Samay's journey to fame began with his passion for comedy, which he refined through local performances.</p>
@@ -71,6 +741,7 @@
                     -->
                 </article>
             </div>
+            <!-- Timeline -->
             <div id="timeline" aria-labelledby="timeline">
                 <h2><a href="#timeline">Samay OP: Timeline</a></h2>
                 <ul>
@@ -86,11 +757,11 @@
                     <li><strong>Present</strong>: Actively engages as a stand-up comedian, YouTuber, and chess enthusiast, while supporting charitable causes.</li>
                 </ul>
             </div>
+            <!-- Photo Gallery -->
             <div id="photo-gallery" aria-labelledby="photo-gallery">
                 <h2><a href="#photo-gallery">Samay Raina: Photo Gallery</a></h2>
-                    <div class="custom-carousel" id="samayCarousel2">
-                        <div class="custom-carousel-inner">
-
+                <div class="custom-carousel" id="samayCarousel2">
+                    <div class="custom-carousel-inner">
                             <div class="custom-carousel-item active">
                                 <img src="/assets/img/avif/maisamayhoon.avif" alt="Mai Samay Hoon 1">
                             </div>
@@ -154,255 +825,240 @@
                             <div class="custom-carousel-item">
                                 <img src="/assets/img/avif/maisamayhoon-16.avif" alt="Mai Samay Hoon 16">
                             </div>
-                        </div>
-                        <a class="custom-carousel-control custom-carousel-control-prev" role="button" data-slide="prev">
+                    </div>
+                    <a class="custom-carousel-control custom-carousel-control-prev" role="button" data-slide="prev">
                             &#10094;
-                        </a>
-                        <a class="custom-carousel-control custom-carousel-control-next" role="button" data-slide="next">
+                    </a>
+                    <a class="custom-carousel-control custom-carousel-control-next" role="button" data-slide="next">
                             &#10095;
-                        </a>
-                        <ol class="custom-carousel-indicators"></ol>
-                    </div>
-                    <!--
-                <div id="photos">
-                    <img src="/assets/img/avif/maisamayhoon.avif" id="srpg" alt="samay">
-                    <img src="/assets/img/avif/maisamayhoon-2.avif" id="srpg" alt="samay">
-                    <img src="/assets/img/avif/maisamayhoon-3.avif" id="srpg" alt="samay">
-                    <img src="/assets/img/avif/maisamayhoon-4.avif" id="srpg" alt="samay">
-                    <img src="/assets/img/avif/maisamayhoon-5.avif" id="srpg" alt="samay">
-                    <img src="/assets/img/avif/maisamayhoon-6.avif" id="srpg" alt="samay">
-                    <img src="/assets/img/avif/maisamayhoon-7.avif" id="srpg" alt="samay">
-                    <img src="/assets/img/avif/maisamayhoon-8.avif" id="srpg" alt="samay">
-                    <img src="/assets/img/avif/maisamayhoon-11.avif" id="ssps" alt="samay">
-                    <img src="/assets/img/avif/maisamayhoon-10.avif" id="srpg" alt="samay">
-                    <img src="/assets/img/avif/maisamayhoon-15.avif" id="srpg" alt="samay">
-                    <img src="/assets/img/avif/maisamayhoon-16.avif" id="srpg" alt="samay">
-                    -->
-                    <!--
-                    <img src="/assets/img/maisamayhoon.jpg" id="srpg" alt="samay">
-                    <img src="/assets/img/maisamayhoon-2.jpg" id="srpg" alt="samay">
-                    <img src="/assets/img/maisamayhoon-3.jpg" id="srpg" alt="samay">
-                    <img src="/assets/img/maisamayhoon-4.jpg" id="srpg" alt="samay">
-                    <img src="/assets/img/maisamayhoon-5.jpg" id="srpg" alt="samay">
-                    <img src="/assets/img/maisamayhoon-6.jpg" id="srpg" alt="samay">
-                    <img src="/assets/img/maisamayhoon-7.jpeg" id="srpg" alt="samay">
-                    <img src="/assets/img/maisamayhoon-8.jpg" id="srpg" alt="samay">
-                    <img src="/assets/img/maisamayhoon-11.jpg" id="ssps" alt="samay">
-                    <img src="/assets/img/maisamayhoon-10.jpg" id="srpg" alt="samay">
-                    <img src="/assets/img/maisamayhoon-15.jpg" id="srpg" alt="samay">
-                    <img src="/assets/img/maisamayhoon-16.jpg" id="srpg" alt="samay">
-                    -->
+                    </a>
+                    <ol class="custom-carousel-indicators"></ol>
                 </div>
             </div>
-            <!--
-            <div id="video-gallery" aria-labelledby="video-gallery">
-                <h2><a href="#video-gallery">Samay Raina: Video Gallery</a></h2>
-                <div class="video-grid">
-                    <div class="video-item">
-                        <div class="video-wrapper">
-                            <iframe src="https://www.youtube.com/embed/FhCbx2TmFUE" frameborder="0" allowfullscreen></iframe>
+            <!-- Video Gallery -->
+            <div id="video-gallery" aria-labelledby="video-gallery-title">
+                <h2 id="video-gallery-title"><a href="#video-gallery">Samay Raina: Video Gallery</a></h2>
+                <div class="vslider-container">
+                    <div class="vslider-wrapper">
+                        <div class="video-item">
+                            <div class="video-wrapper">
+                                <img class="video-thumbnail" data-video-id="FhCbx2TmFUE" alt="Thumbnail of Samay Raina's video titled 'NARAK | Stand-up Comedy by Samay Raina'" />
+                            </div>
+                            <h4>NARAK | Stand-up Comedy by Samay Raina</h4>
                         </div>
-                        <h4>NARAK | Stand-up Comedy by Samay Raina</h4>
+                        <div class="video-item">
+                            <div class="video-wrapper">
+                                <img class="video-thumbnail" data-video-id="KKnhgkmV7k8" alt="Thumbnail of Samay Raina's video titled 'Printing Engineering | Stand-up Comedy by Samay Raina'" />
+                            </div>
+                            <h4>Printing Engineering | Standup Comedy by Samay Raina</h4>
+                        </div>
+                        <div class="video-item">
+                            <div class="video-wrapper">
+                                <img class="video-thumbnail" data-video-id="wVBf39WPInc" alt="Thumbnail of Samay Raina's video titled 'BHARWO KE KHILADI | Life is Unfair'" />
+                            </div>
+                            <h4>BHARWO KE KHILADI | Life is Unfair</h4>
+                        </div>
+                        <div class="video-item">
+                            <div class="video-wrapper">
+                                <img class="video-thumbnail" data-video-id="pysQmeEYOJk" alt="Thumbnail of Samay Raina's video titled 'Samay Raina X Mamaearth 😂'" />
+                            </div>
+                            <h4>INDIA'S GOT LATENT | EP 01 ft. @raftaarmusic</h4>
+                        </div>
+                        <div class="video-item">
+                            <div class="video-wrapper">
+                                <img class="video-thumbnail" data-video-id="DLgcCTnMheg" alt="Thumbnail of Samay Raina's video titled 'SAMAY RAINA AGAINST THE WORLD | TWERK CHALLENGE'" />
+                            </div>
+                            <h4>INDIA'S GOT LATENT | EP 02 ft. @GamerFleet @JokeSingh @KaranSinghMagic</h4>
+                        </div>
+                        <div class="video-item">
+                            <div class="video-wrapper">
+                                <img class="video-thumbnail" data-video-id="5d2iztjXNPE" alt="Thumbnail of Samay Raina's video titled 'Trying Food Hacks So You Don't Have To Ft. @SamayRainaOfficial | Sahiba Bali | Zomato'" />
+                            </div>
+                            <h4>Trying Food Hacks So You Don't Have To Ft. @SamayRainaOfficial | Sahiba Bali | Zomato</h4>
+                        </div>
+                        <div class="video-item">
+                            <div class="video-wrapper">
+                                <img class="video-thumbnail" data-video-id="GR6mTKCXqgY" alt="Thumbnail of Samay Raina's video titled 'Comedian @SamayRainaOfficial 's Detox Challenge Ft. Sahiba Bali | Model Diet Food Challenge | Zomato'" />
+                            </div>
+                            <h4>Comedian @SamayRainaOfficial 's Detox Challenge Ft. Sahiba Bali | Model Diet Food Challenge | Zomato</h4>
+                        </div>
+                        <div class="video-item">
+                            <div class="video-wrapper">
+                                <img class="video-thumbnail" data-video-id="jQMr3059Yyg" alt="Thumbnail of Samay Raina's video titled 'Comedian @SamayRainaOfficial cooks Biryani for Sahiba Bali | Wasting Samay | Zomato'" />
+                            </div>
+                            <h4>Comedian @SamayRainaOfficial cooks Biryani for Sahiba Bali | Wasting Samay | Zomato</h4>
+                        </div>
+                        <div class="video-item">
+                            <div class="video-wrapper">
+                                <img class="video-thumbnail" data-video-id="nG8af3PbEaQ" alt="Thumbnail of Samay Raina's video titled 'DEFEATING @CarryMinati, @tanmaybhat ft. @BBKiVines HIGHLIGHTS'" />
+                            </div>
+                            <h4>DEFEATING @CarryMinati, @tanmaybhat ft. @BBKiVines HIGHLIGHTS</h4>
+                        </div>
+                        <div class="video-item">
+                            <div class="video-wrapper">
+                                <img class="video-thumbnail" data-video-id="JXyI9EkTtVg" alt="Thumbnail of Samay Raina's video titled 'CHAT LEAKED MY CHILDHOOD PICS on REDDIT ft. Mom and Dad'" />
+                            </div>
+                            <h4>CHAT LEAKED MY CHILDHOOD PICS on REDDIT ft. Mom and Dad</h4>
+                        </div>
+                        <div class="video-item">
+                            <div class="video-wrapper">
+                                <img class="video-thumbnail" data-video-id="Lg9TnNhEu6Q" alt="Thumbnail of Samay Raina's video titled 'FART OFF | SAMAY x CHAT x MUNAWAR | KR$NA ❤️'" />
+                            </div>
+                            <h4>FART OFF | SAMAY x CHAT x MUNAWAR | KR$NA ❤️</h4>
+                        </div>
+                        <div class="video-item">
+                            <div class="video-wrapper">
+                                <img class="video-thumbnail" data-video-id="HYw--zi_HLs" alt="Thumbnail of Samay Raina's video titled 'Samay Raina X Mamaearth 😂'" />
+                            </div>
+                            <h4>Samay Raina X Mamaearth 😂</h4>
+                        </div>
+                        <div class="video-item">
+                            <div class="video-wrapper">
+                                <img class="video-thumbnail" data-video-id="uAQLCjWG0vo" alt="Thumbnail of Samay Raina's video titled 'I BOUGHT THE MOST EXPENSIVE CHESS BOARD ON LIVE STREAM'" />
+                            </div>
+                            <h4>I BOUGHT THE MOST EXPENSIVE CHESS BOARD ON LIVE STREAM</h4>
+                        </div>
+                        <div class="video-item">
+                            <div class="video-wrapper">
+                                <img class="video-thumbnail" data-video-id="4lDLyQFlCRA" alt="Thumbnail of Samay Raina's video titled 'Munawar Faruqui's bad habits'" />
+                            </div>
+                            <h4>Munawar Faruqui's bad habits</h4>
+                        </div>
+                        <div class="video-item">
+                            <div class="video-wrapper">
+                                <img class="video-thumbnail" data-video-id="bif7Iu-SI7c" alt="Thumbnail of Samay Raina's video titled 'Bro spares nobody☠️ ft. @SHARKSHE'" />
+                            </div>
+                            <h4>Bro spares nobody☠️ ft. @SHARKSHE</h4>
+                        </div>
+                        <div class="video-item">
+                            <div class="video-wrapper">
+                                <img class="video-thumbnail" data-video-id="378h3TP25to" alt="Thumbnail of Samay Raina's video titled 'Story of every Printing Engineer😂'" />
+                            </div>
+                            <h4>Story of every Printing Engineer😂</h4>
+                        </div>
+                        <div class="video-item">
+                            <div class="video-wrapper">
+                                <img class="video-thumbnail" data-video-id="ylN-BnCAoXM" alt="Thumbnail of Samay Raina's video titled 'Samay Raina needs to hesitate☠️'" />
+                            </div>
+                            <h4>Samay Raina needs to hesitate☠️</h4>
+                        </div>
+                        <div class="video-item">
+                            <div class="video-wrapper">
+                                <img class="video-thumbnail" data-video-id="Pqgz3GtWUvc" alt="Thumbnail of Samay Raina's video titled 'Samay Raina unbelievable Prediction in IND vs PAK 🤯'" />
+                            </div>
+                            <h4>Samay Raina unbelievable Prediction in IND vs PAK 🤯</h4>
+                        </div>
+                        <div class="video-item">
+                            <div class="video-wrapper">
+                                <img class="video-thumbnail" data-video-id="URR2VWqb5iA" alt="Thumbnail of Samay Raina's video titled 'Samay got Fat sh*med 🤣'" />
+                            </div>
+                            <h4>Samay got Fat sh*med 🤣</h4>
+                        </div>
+                        <div class="video-item">
+                            <div class="video-wrapper">
+                                <img class="video-thumbnail" data-video-id="YggJwXAeRfo" alt="Thumbnail of Samay Raina's video titled 'Zomato Roast'" />
+                            </div>
+                            <h4>Zomato Roast</h4>
+                        </div>
+                        <div class="video-item">
+                            <div class="video-wrapper">
+                                <img class="video-thumbnail" data-video-id="QXSf_17xflk" alt="Thumbnail of Samay Raina's video titled 'India's Got Latent | Ep 1 - Mommy issues'" />
+                            </div>
+                            <h4>India's Got Latent | Ep 1 - Mommy issues</h4>
+                        </div>
+                        <div class="video-item">
+                            <div class="video-wrapper">
+                                <img class="video-thumbnail" data-video-id="kFdUJbNNKKg" alt="Thumbnail of Samay Raina's video titled 'Funniest🤣 Questions of Samay Raina | Munawar Faruqui |Raftaar|Suhani Shah'" />
+                            </div>
+                            <h4>Funniest🤣 Questions of Samay Raina | Munawar Faruqui |Raftaar|Suhani Shah</h4>
+                        </div>
+                        <div class="video-item">
+                            <div class="video-wrapper">
+                                <img class="video-thumbnail" data-video-id="FNNFfnDaVI4" alt="Thumbnail of Samay Raina's video titled 'WHY BRANDS LOVE💖 SAMAY RAINA?'" />
+                            </div>
+                            <h4>WHY BRANDS LOVE💖 SAMAY RAINA?</h4>
+                        </div>
+                        <div class="video-item">
+                            <div class="video-wrapper">
+                                <img class="video-thumbnail" data-video-id="J0QAIn9nF84" alt="Thumbnail of Samay Raina's video titled 'Worst Pickup Lines 😂 × @SamayRainaOfficial'" />
+                            </div>
+                            <h4>Worst Pickup Lines 😂 × @SamayRainaOfficial</h4>
+                        </div>
+                        <div class="video-item">
+                            <div class="video-wrapper">
+                                <img class="video-thumbnail" data-video-id="CMmHZELfU9M" alt="Thumbnail of Samay Raina's video titled 'Funniest Stream of all time @SamayRainaOfficial'" />
+                            </div>
+                            <h4>Funniest Stream of all time @SamayRainaOfficial</h4>
+                        </div>
+                        <div class="video-item">
+                            <div class="video-wrapper">
+                                <img class="video-thumbnail" data-video-id="PNQeH2Dx-5M" alt="Thumbnail of Samay Raina's video titled 'SAMAY RAINA SPOILS SONGS COMPILATION'" />
+                            </div>
+                            <h4>SAMAY RAINA SPOILS SONGS COMPILATION</h4>
+                        </div>
+                        <div class="video-item">
+                            <div class="video-wrapper">
+                                <img class="video-thumbnail" data-video-id="sLeNODz7jLE" alt="Thumbnail of Samay Raina's video titled 'SAGAR SHAH STONED'" />
+                            </div>
+                            <h4>SAGAR SHAH STONED</h4>
+                        </div>
+                        <div class="video-item">
+                            <div class="video-wrapper">
+                                <img class="video-thumbnail" data-video-id="ldfrgzfPrhI" alt="Thumbnail of Samay Raina's video titled 'SCAM 1694 ft. Angry Sagar Shah'" />
+                            </div>
+                            <h4>SCAM 1694 ft. Angry Sagar Shah</h4>
+                        </div>
+                        <div class="video-item">
+                            <div class="video-wrapper">
+                                <img class="video-thumbnail" data-video-id="DCyDplm1e2g" alt="Thumbnail of Samay Raina's video titled 'Must Watch Podcast @SamayRainaOfficial @KaranSinghBoomer @GamerFleet'" />
+                            </div>
+                            <h4>Must Watch Podcast @SamayRainaOfficial @KaranSinghBoomer @GamerFleet</h4>
+                        </div>
+                        <div class="video-item">
+                            <div class="video-wrapper">
+                                <img class="video-thumbnail" data-video-id="NuiCVQv-TQQ" alt="Thumbnail of Samay Raina's video titled 'Samay Raina Losing Sponsors Compilation'" />
+                            </div>
+                            <h4>Samay Raina Losing Sponsors Compilation</h4>
+                        </div>
+                        <div class="video-item">
+                            <div class="video-wrapper">
+                                <img class="video-thumbnail" data-video-id="gGjScpBmYdk" alt="Thumbnail of Samay Raina's video titled 'SAMAY RAINA CSL JOKES COMPILATION'" />
+                            </div>
+                            <h4>SAMAY RAINA CSL JOKES COMPILATION</h4>
+                        </div>
+                        <div class="video-item">
+                            <div class="video-wrapper">
+                                <img class="video-thumbnail" data-video-id="z1K_R3Aai_0" alt="Thumbnail of Samay Raina's video titled 'SAMAY RAINA AGAINST THE WORLD | TWERK CHALLENGE'" />
+                            </div>
+                            <h4>SAMAY RAINA AGAINST THE WORLD | TWERK CHALLENGE</h4>
+                        </div>
                     </div>
-                    <div class="video-item">
-                        <div class="video-wrapper">
-                            <iframe src="https://www.youtube.com/embed/KKnhgkmV7k8" frameborder="0" allowfullscreen></iframe>
-                        </div>
-                        <h4>Printing Engineering | Standup Comedy by Samay Raina</h4>
-                    </div>
-                    <div class="video-item">
-                        <div class="video-wrapper">
-                            <iframe src="https://www.youtube.com/embed/wVBf39WPInc" frameborder="0" allowfullscreen></iframe>
-                        </div>
-                        <h4>BHARWO KE KHILADI | Life is Unfair</h4>
-                    </div>
-                    <div class="video-item">
-                        <div class="video-wrapper">
-                            <iframe src="https://www.youtube.com/embed/pysQmeEYOJk" frameborder="0" allowfullscreen></iframe>
-                        </div>
-                        <h4>INDIA'S GOT LATENT | EP 01 ft. @raftaarmusic</h4>
-                    </div>
-                    <div class="video-item">
-                        <div class="video-wrapper">
-                            <iframe src="https://www.youtube.com/embed/DLgcCTnMheg" frameborder="0" allowfullscreen></iframe>
-                        </div>
-                        <h4>INDIA'S GOT LATENT | EP 02 ft. @GamerFleet @JokeSingh @KaranSinghMagic</h4>
-                    </div>
-                    <div class="video-item">
-                        <div class="video-wrapper">
-                            <iframe src="https://www.youtube.com/embed/5d2iztjXNPE" frameborder="0" allowfullscreen></iframe>
-                        </div>
-                        <h4>Trying Food Hacks So You Don't Have To Ft. @SamayRainaOfficial | Sahiba Bali | Zomato</h4>
-                    </div>
-                    <div class="video-item">
-                        <div class="video-wrapper">
-                            <iframe src="https://www.youtube.com/embed/GR6mTKCXqgY" frameborder="0" allowfullscreen></iframe>
-                        </div>
-                        <h4>Comedian @SamayRainaOfficial 's Detox Challenge Ft. Sahiba Bali | Model Diet Food Challenge | Zomato</h4>
-                    </div>
-                    <div class="video-item">
-                        <div class="video-wrapper">
-                            <iframe src="https://www.youtube.com/embed/jQMr3059Yyg" frameborder="0" allowfullscreen></iframe>
-                        </div>
-                        <h4>Comedian @SamayRainaOfficial cooks Biryani for Sahiba Bali | Wasting Samay | Zomato</h4>
-                    </div>
-                    <div class="video-item">
-                        <div class="video-wrapper">
-                            <iframe src="https://www.youtube.com/embed/nG8af3PbEaQ" frameborder="0" allowfullscreen></iframe>
-                        </div>
-                        <h4>DEFEATING @CarryMinati, @tanmaybhat ft. @BBKiVines HIGHLIGHTS</h4>
-                    </div>
-                    <div class="video-item">
-                        <div class="video-wrapper">
-                            <iframe src="https://www.youtube.com/embed/JXyI9EkTtVg" frameborder="0" allowfullscreen></iframe>
-                        </div>
-                        <h4>CHAT LEAKED MY CHILDHOOD PICS on REDDIT ft. Mom and Dad</h4>
-                    </div>
-                    <div class="video-item">
-                        <div class="video-wrapper">
-                            <iframe src="https://www.youtube.com/embed/Lg9TnNhEu6Q" frameborder="0" allowfullscreen></iframe>
-                        </div>
-                        <h4>FART OFF | SAMAY x CHAT x MUNAWAR | KR$NA ❤️</h4>
-                    </div>
-                    <div class="video-item">
-                        <div class="video-wrapper">
-                            <iframe src="https://www.youtube.com/embed/HYw--zi_HLs" frameborder="0" allowfullscreen></iframe>
-                        </div>
-                        <h4>Samay Raina X Mamaearth 😂</h4>
-                    </div>
-                    <div class="video-item">
-                        <div class="video-wrapper">
-                            <iframe src="https://www.youtube.com/embed/uAQLCjWG0vo" frameborder="0" allowfullscreen></iframe>
-                        </div>
-                        <h4>I BOUGHT THE MOST EXPENSIVE CHESS BOARD ON LIVE STREAM</h4>
-                    </div>
-                    <div class="video-item">
-                        <div class="video-wrapper">
-                            <iframe src="https://www.youtube.com/embed/4lDLyQFlCRA" frameborder="0" allowfullscreen></iframe>
-                        </div>
-                        <h4>Munawar Faruqui's bad habits</h4>
-                    </div>
-                    <div class="video-item">
-                        <div class="video-wrapper">
-                            <iframe src="https://www.youtube.com/embed/bif7Iu-SI7c" frameborder="0" allowfullscreen></iframe>
-                        </div>
-                        <h4>Bro spares nobody☠️ ft. @SHARKSHE</h4>
-                    </div>
-                    <div class="video-item">
-                        <div class="video-wrapper">
-                            <iframe src="https://www.youtube.com/embed/378h3TP25to" frameborder="0" allowfullscreen></iframe>
-                        </div>
-                        <h4>Story of every Printing Engineer😂</h4>
-                    </div>
-                    <div class="video-item">
-                        <div class="video-wrapper">
-                            <iframe src="https://www.youtube.com/embed/ylN-BnCAoXM" frameborder="0" allowfullscreen></iframe>
-                        </div>
-                        <h4>Samay Raina needs to hesitate☠️</h4>
-                    </div>
-                    <div class="video-item">
-                        <div class="video-wrapper">
-                            <iframe src="https://www.youtube.com/embed/Pqgz3GtWUvc" frameborder="0" allowfullscreen></iframe>
-                        </div>
-                        <h4>Samay Raina unbelievable Prediction in IND vs PAK 🤯</h4>
-                    </div>
-                    <div class="video-item">
-                        <div class="video-wrapper">
-                            <iframe src="https://www.youtube.com/embed/URR2VWqb5iA" frameborder="0" allowfullscreen></iframe>
-                        </div>
-                        <h4>Samay got Fat sh*med 🤣</h4>
-                    </div>
-                    <div class="video-item">
-                        <div class="video-wrapper">
-                            <iframe src="https://www.youtube.com/embed/YggJwXAeRfo" frameborder="0" allowfullscreen></iframe>
-                        </div>
-                        <h4>Zomato Roast</h4>
-                    </div>
-                    <div class="video-item">
-                        <div class="video-wrapper">
-                            <iframe src="https://www.youtube.com/embed/QXSf_17xflk" frameborder="0" allowfullscreen></iframe>
-                        </div>
-                        <h4>India's Got Latent | Ep 1 - Mommy issues</h4>
-                    </div>
-                    <div class="video-item">
-                        <div class="video-wrapper">
-                            <iframe src="https://www.youtube.com/embed/kFdUJbNNKKg" frameborder="0" allowfullscreen></iframe>
-                        </div>
-                        <h4>Funniest🤣 Questions of Samay Raina | Munawar Faruqui |Raftaar|Suhani Shah</h4>
-                    </div>
-                    <div class="video-item">
-                        <div class="video-wrapper">
-                            <iframe src="https://www.youtube.com/embed/FNNFfnDaVI4" frameborder="0" allowfullscreen></iframe>
-                        </div>
-                        <h4>WHY BRANDS LOVE💖 SAMAY RAINA?</h4>
-                    </div>
-                    <div class="video-item">
-                        <div class="video-wrapper">
-                            <iframe src="https://www.youtube.com/embed/J0QAIn9nF84" frameborder="0" allowfullscreen></iframe>
-                        </div>
-                        <h4>Worst Pickup Lines 😂 × @SamayRainaOfficial</h4>
-                    </div>
-                    <div class="video-item">
-                        <div class="video-wrapper">
-                            <iframe src="https://www.youtube.com/embed/CMmHZELfU9M" frameborder="0" allowfullscreen></iframe>
-                        </div>
-                        <h4>Funniest Stream of all time @SamayRainaOfficial</h4>
-                    </div>
-                    <div class="video-item">
-                        <div class="video-wrapper">
-                            <iframe src="https://www.youtube.com/embed/CMmHZELfU9M" frameborder="0" allowfullscreen></iframe>
-                        </div>
-                        <h4>Funniest Stream of all time @SamayRainaOfficial</h4>
-                    </div>
-                    <div class="video-item">
-                        <div class="video-wrapper">
-                            <iframe src="https://www.youtube.com/embed/PNQeH2Dx-5M" frameborder="0" allowfullscreen></iframe>
-                        </div>
-                        <h4>SAMAY RAINA SPOILS SONGS COMPILATION</h4>
-                    </div>
-                    <div class="video-item">
-                        <div class="video-wrapper">
-                            <iframe src="https://www.youtube.com/embed/sLeNODz7jLE" frameborder="0" allowfullscreen></iframe>
-                        </div>
-                        <h4>SAGAR SHAH STONED</h4>
-                    </div>
-                    <div class="video-item">
-                        <div class="video-wrapper">
-                            <iframe src="https://www.youtube.com/embed/ldfrgzfPrhI" frameborder="0" allowfullscreen></iframe>
-                        </div>
-                        <h4>SCAM 1694 ft. Angry Sagar Shah</h4>
-                    </div>
-                    <div class="video-item">
-                        <div class="video-wrapper">
-                            <iframe src="https://www.youtube.com/embed/DCyDplm1e2g" frameborder="0" allowfullscreen></iframe>
-                        </div>
-                        <h4>Must Watch Podcast @SamayRainaOfficial @KaranSinghBoomer @GamerFleet</h4>
-                    </div>
-                    <div class="video-item">
-                        <div class="video-wrapper">
-                            <iframe src="https://www.youtube.com/embed/NuiCVQv-TQQ" frameborder="0" allowfullscreen></iframe>
-                        </div>
-                        <h4>Samay Raina Losing Sponsors Compilation</h4>
-                    </div>
-                    <div class="video-item">
-                        <div class="video-wrapper">
-                            <iframe src="https://www.youtube.com/embed/gGjScpBmYdk" frameborder="0" allowfullscreen></iframe>
-                        </div>
-                        <h4>SAMAY RAINA CSL JOKES COMPILATION</h4>
+                    <div class="vslider-nav">
+                        <button class="vnav-button" id="prev-btn" aria-label="Previous video">&#10094;</button>
+                        <button class="vnav-button" id="next-btn" aria-label="Next video">&#10095;</button>
                     </div>
                 </div>
             </div>
-            -->
+            
+            <!-- Modal -->
+            <div id="videoModal" class="modal" role="dialog" aria-labelledby="modalTitle" aria-describedby="modalDesc">
+                <div class="modal-content">
+                    <iframe id="videoFrame" src="" frameborder="0" allowfullscreen aria-labelledby="modalTitle"></iframe>
+                </div>
+                <span class="close" aria-label="Close modal">&times;</span>
+            </div>            
         </main>
         <footer>
             <div class="footerContainer">
                 <div class="socials">
-                    <a href="https://www.facebook.com/rainasamay/"><i class="fa-brands fa-facebook"></i></a>
                     <a href="https://www.instagram.com/maisamayhoon/"><i class="fa-brands fa-instagram"></i></a>
                     <a href="https://x.com/ReheSamay/"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="https://www.facebook.com/rainasamay/"><i class="fa-brands fa-facebook"></i></a>
                     <a href="https://www.youtube.com/channel/UCAov2BBv1ZJav0c_yHEciAw/"><i class="fa-brands fa-youtube"></i></a>
                     <a href="https://www.reddit.com/r/SamayRaina/"><i class="fa-brands fa-reddit"></i></a>
-                    <!--<a href="https://linktr.ee/samay.raina/"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="m13.736 5.853l4.005-4.117l2.325 2.38l-4.2 4.005h5.908v3.305h-5.937l4.229 4.108l-2.325 2.334l-5.74-5.769l-5.741 5.769l-2.325-2.325l4.229-4.108H2.226V8.121h5.909l-4.2-4.004l2.324-2.381l4.005 4.117V0h3.472zm-3.472 10.306h3.472V24h-3.472z"/></svg></a>-->
+                    <a href="https://discord.gg/maisamayhoon"><i class="fa-brands fa-discord"></i></a>                    <!--<a href="https://linktr.ee/samay.raina/"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="m13.736 5.853l4.005-4.117l2.325 2.38l-4.2 4.005h5.908v3.305h-5.937l4.229 4.108l-2.325 2.334l-5.74-5.769l-5.741 5.769l-2.325-2.325l4.229-4.108H2.226V8.121h5.909l-4.2-4.004l2.324-2.381l4.005 4.117V0h3.472zm-3.472 10.306h3.472V24h-3.472z"/></svg></a>-->
+                    <a href="https://go.chess.com/samay"><i class="fa-brands fa-chess.com"></i></a>                    <!--<a href="https://linktr.ee/samay.raina/"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="m13.736 5.853l4.005-4.117l2.325 2.38l-4.2 4.005h5.908v3.305h-5.937l4.229 4.108l-2.325 2.334l-5.74-5.769l-5.741 5.769l-2.325-2.325l4.229-4.108H2.226V8.121h5.909l-4.2-4.004l2.324-2.381l4.005 4.117V0h3.472zm-3.472 10.306h3.472V24h-3.472z"/></svg></a>-->
+                    <a href="https://www.bmsamay.com/"><i>BM Samay</i></a>
                 </div>
                 <div class="footerNav">
                     <ul>
@@ -412,7 +1068,17 @@
                         <li><a href="#video-gallery">Video Gallery</a></li>
                     </ul>
                 </div>
-                <div class="footerBottom"><p>No Copyright &copy; 2024; Designed & Developed by <span class="designer"><a href="https://www.linkedin.com/in/jainish2001/">Jainish Jain</a></span></p></div>
+                <div class="footerBottom">
+                    <p>
+                        <!--<span class="tooltip">No Copyright &copy; 2024;<span class="tooltiptext">©️ All copyrights belong to Respective owners. No copyright infringement intended. For Promotional Use Only.</span></span> -->
+                        Designed & Developed by Jainish Jain
+                        <div class="socials">
+                            <a href="https://www.instagram.com/jainish.2001/"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="https://www.linkedin.com/in/jainish.2001/"><i class="fa-brands fa-linkedin"></i></a>
+                            <a href="https://www.github.com/jainish2001/"><i class="fa-brands fa-github"></i></a>
+                        </div>
+                    </p>
+                </div>
             </div>
         </footer>
         <button id="back-to-top" aria-label="Back to top">↑</button>
@@ -452,6 +1118,8 @@
                 showSlide(currentIndex);
             }, 3000); // Change slide every 3 seconds
     
+
+            /*
             // Video Gallery
             // Add event listeners to video items
             const videoItems = document.querySelectorAll('.video-item');
@@ -463,14 +1131,14 @@
                 iframe.contentWindow.postMessage('{"event":"command","func":"' + 'playVideo' + '","args":""}', '*');
             });
             });
-
+            */
 
             // Carousel
             function initCarousel(carouselId) {
                 const carousel = document.getElementById(carouselId);
                 const items = carousel.querySelectorAll('.custom-carousel-item');
                 const indicatorsContainer = carousel.querySelector('.custom-carousel-indicators');
-                let currentIndex = 0;
+                let currentIndexii = 0;
 
                 // Create indicators
                 items.forEach((_, index) => {
@@ -482,19 +1150,19 @@
                 const indicators = indicatorsContainer.querySelectorAll('li');
 
                 function goToSlide(index) {
-                    items[currentIndex].classList.remove('active');
-                    indicators[currentIndex].classList.remove('active');
-                    currentIndex = index;
-                    items[currentIndex].classList.add('active');
-                    indicators[currentIndex].classList.add('active');
+                    items[currentIndexii].classList.remove('active');
+                    indicators[currentIndexii].classList.remove('active');
+                    currentIndexii = index;
+                    items[currentIndexii].classList.add('active');
+                    indicators[currentIndexii].classList.add('active');
                 }
 
                 function nextSlide() {
-                    goToSlide((currentIndex + 1) % items.length);
+                    goToSlide((currentIndexii + 1) % items.length);
                 }
 
                 function prevSlide() {
-                    goToSlide((currentIndex - 1 + items.length) % items.length);
+                    goToSlide((currentIndexii - 1 + items.length) % items.length);
                 }
 
                 // Set up controls
@@ -515,6 +1183,8 @@
                     initCarousel(carousel.id);
                 });
             });
+
+            
             // Back to top button
             const backToTopButton = document.getElementById('back-to-top');
 
@@ -529,7 +1199,99 @@
             backToTopButton.addEventListener('click', () => {
                 window.scrollTo({ top: 0, behavior: 'smooth' });
             });
+
+
+            // Video Gallery
+            // Video Gallery
+            let currentIndexV = 0;
+            let autoSlideIntervalV; // Variable to hold the interval ID
+
+            function showYouTubeThumbnails() {
+                const thumbnails = document.querySelectorAll('.video-thumbnail');
+                thumbnails.forEach(thumbnail => {
+                    const videoId = thumbnail.getAttribute('data-video-id');
+                    if (videoId) {
+                        const imgURL = 'https://i.ytimg.com/vi/' + videoId + '/hqdefault.jpg';
+                        thumbnail.src = imgURL;
+                        thumbnail.addEventListener('click', () => openVideoModal(videoId));
+                    }
+                });
+            }
+
+            function openVideoModal(videoId) {
+                const videoUrl = 'https://www.youtube.com/embed/' + videoId;
+                const modal = document.getElementById('videoModal');
+                const videoFrame = document.getElementById('videoFrame');
+                videoFrame.src = videoUrl;
+                modal.style.display = 'flex';
+            }
+
+            function closeVideoModal() {
+                const modal = document.getElementById('videoModal');
+                const videoFrame = document.getElementById('videoFrame');
+                videoFrame.src = '';
+                modal.style.display = 'none';
+            }
+
+            function showVideoSlide(index) {
+                const slides = document.querySelector('.vslider-wrapper');
+                const totalSlides = document.querySelectorAll('.video-item').length;
+                const items = document.querySelectorAll('.video-item');
+
+                if (index >= totalSlides) {
+                    currentIndexV = 0;
+                } else if (index < 0) {
+                    currentIndexV = totalSlides - 1;
+                } else {
+                    currentIndexV = index;
+                }
+
+                // Remove 'active' class from all slides
+                items.forEach(item => item.classList.remove('active'));
+
+                // Add 'active' class to the current slide
+                items[currentIndexV].classList.add('active');
+
+                const offset = -currentIndexV * 100; // Each slide is 100% width
+                slides.style.transform = `translateX(${offset}%)`;
+            }
+
+            function startAutoSlideV() {
+                autoSlideIntervalV = setInterval(() => {
+                    showVideoSlide(currentIndexV + 1);
+                }, 5000); // Change slides every 5 seconds
+            }
+
+            function stopAutoSlideV() {
+                clearInterval(autoSlideIntervalV);
+            }
+
+            // Event listeners for manual slide control
+            document.getElementById('prev-btn').addEventListener('click', () => {
+                stopAutoSlideV(); // Stop auto-slide when user manually changes slides
+                showVideoSlide(currentIndexV - 1);
+                startAutoSlideV(); // Restart auto-slide after manual change
+            });
+
+            document.getElementById('next-btn').addEventListener('click', () => {
+                stopAutoSlideV(); // Stop auto-slide when user manually changes slides
+                showVideoSlide(currentIndexV + 1);
+                startAutoSlideV(); // Restart auto-slide after manual change
+            });
+
+            document.querySelector('.close').addEventListener('click', closeVideoModal);
+
+            window.addEventListener('click', (event) => {
+                const modal = document.getElementById('videoModal');
+                if (event.target == modal) {
+                    closeVideoModal();
+                }
+            });
+
+            // Initialize thumbnails, set first slide, and start auto-slide
+            showYouTubeThumbnails();
+            showVideoSlide(currentIndexV);
+            startAutoSlideV(); // Start auto-slide
         </script>
     </body>
 </html>
-
